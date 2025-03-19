@@ -6,11 +6,11 @@ $grid-gutter-width: 24px;
 
 // Taille maximum du container, selon les breakpoints
 $container-max-widths: (
-  sm: 540px,
+  sm: 306px,
   md: 720px,
   lg: 960px,
-  xl: 1140px,
-  xxl: 1320px,
+  xl: 1392px,
+  xxl: 1392px,
 );
 
 // Breakpoints
@@ -23,8 +23,10 @@ $grid-breakpoints: (
   xxl: 1400px,
 );
 
+//Import
 @import "bootstrap/scss/bootstrap-grid";
 @import "font";
 @import "base";
 @import "layout";
-@import "modules/example";
+@import "modules/header";
+@import "modules/footer";
