@@ -1,85 +1,149 @@
 import * as THREE from "three";
 
-// var element = document.querySelector(".element");
-// var width = element.clientWidth;
-// var height = element.clientHeight;
-// var scene = new THREE.Scene();
-// var camera = new THREE.PerspectiveCamera(50, width / height, 0.1, 1000);
-// camera.position.z = 3;
-// var renderer = new THREE.WebGLRenderer();
-// // var geometry = new THREE.BoxGeometry(1, 1, 1);
-// var geometry = new THREE.BoxGeometry(1, 1.2, 0.02);
-// // var material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
-// import texturePath from "../img/collage-exposition.png";
-// var textureLoader = new THREE.TextureLoader();
-// var texture = textureLoader.load(texturePath);
-// var material = new THREE.MeshBasicMaterial({ map: texture });
-// var cube = new THREE.Mesh(geometry, material);
-// // cube.rotation.x = 0.5;
-// // cube.rotation.y = 0.5;
+var projects = [
+  { img: "/img/collage-exposition.png", ratio: 2.4, url: "project.html" },
+  { img: "/img/bleue.png", ratio: 2, url: "project.html" },
+  { img: "/img/forest.jpg", ratio: 0.6, url: "project.html" },
+];
 
-// function animate() {
-//   cube.rotation.x += 0.01;
-//   cube.rotation.y += 0.01;
-
-//   renderer.render(scene, camera);
-// }
-
-// renderer.setSize(width, height);
-
-// element.appendChild(renderer.domElement);
-// scene.add(cube);
-// renderer.setAnimationLoop(animate);
-// window.addEventListener("wheel", (event) => {
-//   console.log("test");
-//   cube.position.x += event.deltaY * 0.01;
-//   renderer.render(scene, camera);
-// });
+projects.forEach((project) => {
+  var width = 3;
+  var height = 3 * project.ratio;
+  var geometry = new THREE.BoxGeometry(width, height, 0.02);
+});
 
 var container = document.querySelector(".scene-container");
 var width = container.clientWidth;
 var height = container.clientHeight;
 
+//Scene, Renderer, Camera
 var scene = new THREE.Scene();
 var camera = new THREE.PerspectiveCamera(10, width / height, 0.1, 1000);
 camera.position.z = 50;
-// camera.position.y = 1;
 
 var renderer = new THREE.WebGLRenderer({ alpha: true });
 renderer.setSize(width, height);
 container.appendChild(renderer.domElement);
 
+//Texture loader
 var textureLoader = new THREE.TextureLoader();
+var group = new THREE.Group();
 
+// // Create and Load Textures for Cubes
+// projects.forEach((project, index) => {
+//   textureLoader.load(project.img, (texture) => {
+//     // Create the geometry inside the load callback
+//     var width = 3;
+//     var height = 3 * project.ratio;
+//     var geometry = new THREE.BoxGeometry(width, height, 0.02);
+//     var material = new THREE.MeshBasicMaterial({ map: texture });
+
+//     var cube = new THREE.Mesh(geometry, material);
+//     cube.position.set(0, 0, index * -4); // Space out cubes
+
+//     group.add(cube);
+//     scene.add(group);
+//     renderer.render(scene, camera); // Ensure render updates
+//   });
+// });
 import collagePath from "../img/collage-exposition.png";
+import bleuePath from "../img/bleue.png";
 
 var collageTexture = textureLoader.load(collagePath);
+var bleueTexture = textureLoader.load(bleuePath);
 
-var geometry = new THREE.BoxGeometry(3, 2, 0.02);
+var geometry = new THREE.BoxGeometry(3, 3.48, 0.09);
 var collageMaterial = new THREE.MeshBasicMaterial({ map: collageTexture });
 var collageCube = new THREE.Mesh(geometry, collageMaterial);
-// cube.rotation.y = -0.4;
 
-var group = new THREE.Group();
+var bleueMaterial = new THREE.MeshBasicMaterial({ map: bleueTexture });
+var bleueCube = new THREE.Mesh(geometry, bleueMaterial);
+bleueCube.position.z = 3; //gap entre les projets//
+
+//Group
 group.add(collageCube);
-group.rotation.y = (Math.PI / 4) * -1;
-group.rotation.x = Math.PI / 4;
+group.add(bleueCube);
+group.rotation.y = (Math.PI / 6) * -1;
+group.rotation.x = Math.PI / 9.5;
 
 scene.add(group);
 
+//Scroll Interaction
 window.addEventListener("wheel", (event) => {
   var delta = event.deltaY;
 
-  // cube.position.x += -delta * 0.002;
   collageCube.position.z += delta * 0.002;
-  // cube.position.y += -delta * 0.002;
+  bleueCube.position.z += delta * 0.002;
 });
+
+//Animate Scene
 function animate() {
   requestAnimationFrame(animate);
   renderer.render(scene, camera);
 }
 
 animate();
+
+// import * as THREE from "three";
+
+// var projects = [
+//   { img: "/img/collage-exposition.png", ratio: 2.4, url: "project.html" },
+//   { img: "/img/bleue.png", ratio: 2, url: "project.html" },
+//   { img: "/img/forest.jpg", ratio: 0.6, url: "project.html" },
+// ];
+
+// var container = document.querySelector(".scene-container");
+// var width = container.clientWidth;
+// var height = container.clientHeight;
+
+// // Scene, Camera, Renderer
+// var scene = new THREE.Scene();
+// var camera = new THREE.PerspectiveCamera(10, width / height, 0.1, 1000);
+// camera.position.z = 50;
+
+// var renderer = new THREE.WebGLRenderer({ alpha: true });
+// renderer.setSize(width, height);
+// container.appendChild(renderer.domElement);
+
+// // Texture Loader
+// var textureLoader = new THREE.TextureLoader();
+// var group = new THREE.Group();
+
+// // Create and Load Textures for Cubes
+// projects.forEach((project, index) => {
+//   textureLoader.load(project.img, (texture) => {
+//     // Create the geometry inside the load callback
+//     var width = 3;
+//     var height = 3 * project.ratio;
+//     var geometry = new THREE.BoxGeometry(width, height, 0.02);
+//     var material = new THREE.MeshBasicMaterial({ map: texture });
+
+//     var cube = new THREE.Mesh(geometry, material);
+//     cube.position.set(0, 0, index * -4); // Space out cubes
+
+//     group.add(cube);
+//     scene.add(group);
+//     renderer.render(scene, camera); // Ensure render updates
+//   });
+// });
+
+// //Rotate Group
+// group.rotation.y = -Math.PI / 6;
+// group.rotation.x = Math.PI / 9.5;
+
+// // Scroll Interaction
+// window.addEventListener("wheel", (event) => {
+//   var delta = event.deltaY * 0.01;
+//   group.position.z += delta;
+// });
+
+// //Animate Scene
+// function animate() {
+//   requestAnimationFrame(animate);
+//   renderer.render(scene, camera);
+// }
+
+// animate();
 
 // var headerLanguages = document.querySelector(".header-languages");
 // var language = document.querySelector(".window");
