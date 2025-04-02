@@ -14,7 +14,10 @@
   </head>
   <body>
     <div class="header-homepage">
-      <extends src="header.html"></extends>
+      <extends
+        src="header.html"
+        locals='{"img":"img/closed-eye.svg", "alt":"non"}'
+      ></extends>
     </div>
 
     <div class="l-scene-container"></div>
@@ -22,5 +25,6 @@
     <extends src="footer.html"></extends>
 
     <script src="js/main.js" type="module"></script>
+    <script src="js/projects.js" type="module"></script>
   </body>
 </html>

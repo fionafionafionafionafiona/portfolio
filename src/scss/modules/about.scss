@@ -1,0 +1,24 @@
+.about-description {
+  padding-top: 202px;
+  font-weight: var(--text-font-weight);
+}
+.about-resume {
+  gap: 58px;
+  text-decoration: underline;
+}
+
+.about-images {
+  padding-top: 40px;
+  display: flex;
+  flex-direction: row;
+}
+
+.about-portrait {
+  width: 100%;
+}
+.about-fun-facts {
+  width: 150%;
+  height: 150%;
+  transform: translateX(-150) translateY(-23);
+  z-index: 1;
+}

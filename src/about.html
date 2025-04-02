@@ -14,9 +14,39 @@
   </head>
   <body>
     <div class="header-about">
-      <extends src="header.html"></extends>
+      <extends src="header.html" locals='{"img":"img/eye.png", "alt":"non"}'>
+      </extends>
     </div>
-    à propos <br />
+    <div class="container">
+      <div class="row">
+        <div class="col-4 offset-1">
+          <div class="about-description">
+            <p>
+              coucou ! moi c’est fiona. j’ai grandi en argentine et j’ai
+              déménagé en suisse en 2020. actuellement je suis étudiante en
+              interactive media design à eikon. si tu veux collaborer avec moi
+              écris moi vite avant que je déménage dans une ferme ou dans la
+              jungle et je ne revienne plus jamais ;)
+            </p>
+            <a class="about-resume" href="img/Fiona-Perina-CV.pdf">CV</a>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="about-images">
+            <img
+              class="about-portrait"
+              src="img/portrait.png"
+              alt="Portrait of Fiona Perina"
+            />
+            <img
+              class="about-fun-facts"
+              src="img/fun-facts.png"
+              alt="Quelques fun facts sur moi : multidisciplinaire, militante du bio, cuisinière dans on temps libre, amie du soleil"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
     <extends src="footer.html"></extends>
 
     <script src="js/main.js" type="module"></script>

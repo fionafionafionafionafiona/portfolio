@@ -28,12 +28,15 @@
   width: 102px;
   border: 1px solid;
   border-radius: 50%;
-  svg {
-    margin-top: 10px;
-  }
+}
+.header-eye {
+  width: 100%;
 }
 .header-button:hover {
   color: var(--Black);
+  img {
+    color: var(--Black);
+  }
 }
 
 .header-languages {
