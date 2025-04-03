@@ -1,9 +1,11 @@
 .about-description {
   padding-top: 202px;
-  font-weight: var(--text-font-weight);
-}
-.about-resume {
+  display: flex;
+  flex-direction: column;
   gap: 58px;
+}
+
+.about-resume {
   text-decoration: underline;
 }
 

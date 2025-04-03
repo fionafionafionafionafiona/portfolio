@@ -1,0 +1,33 @@
+.contact-content {
+  display: flex;
+  flex-direction: column;
+  gap: 87px;
+  padding-top: 170px;
+}
+
+.contact-social-media {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.contact-link {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 3px;
+}
+
+.contact-link svg {
+  transition: 0.5s;
+
+  transform-origin: center left;
+}
+
+.contact-link:hover svg {
+  transform: scaleX(400%);
+}
+
+.contact-location p {
+  text-align: right;
+}

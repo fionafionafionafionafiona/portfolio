@@ -41,3 +41,19 @@ img,
 video {
   display: block;
 }
+
+p {
+  font-size: var(--text-font-size);
+  font-weight: var(--text-font-weight);
+}
+
+// @media (max-width: 768px) {
+//   p {
+//     font-size: var(--text-xs-font-size);
+//   }
+// }
+// @media (min-width: 769px) {
+//   p {
+//     font-size: var(--text-font-size);
+//   }
+// }
