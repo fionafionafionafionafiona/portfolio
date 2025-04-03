@@ -28,14 +28,17 @@
   width: 102px;
   border: 1px solid;
   border-radius: 50%;
+  transition: 0.5s;
+  path {
+    transition: 0.5s;
+  }
 }
-.header-eye {
-  width: 100%;
-}
+
 .header-button:hover {
   color: var(--Black);
-  img {
-    color: var(--Black);
+  svg path {
+    fill: var(--Black);
+    transition: 0.5s;
   }
 }
 
@@ -105,4 +108,24 @@
 .header-about .about,
 .header-contact .contact {
   color: var(--Black);
+}
+
+.header-homepage,
+.header-contact {
+  .header-open-eye {
+    display: none;
+  }
+}
+
+.header-about {
+  .header-closed-eye {
+    display: none;
+  }
+}
+.header-open-eye {
+  width: 100%;
+}
+
+.header-closed-eye {
+  margin-top: 10px;
 }
