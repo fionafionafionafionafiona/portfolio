@@ -13,11 +13,23 @@
     <link rel="stylesheet" href="scss/main.scss" />
   </head>
   <body>
-    <extends
-      src="header.html"
-      locals='{"img":"img/closed-eye.svg", "alt":"non"}'
-    ></extends>
-    sccdfcgf
+    <div class="header-project">
+      <extends
+        src="header.html"
+        locals='{"img":"img/closed-eye.svg", "alt":"non"}'
+      ></extends>
+    </div>
+    <div class="project-info">
+      <div class="project-title-date">
+        <div class="project-title">{{ title }}</div>
+        <div class="project-date">{{ year }}</div>
+      </div>
+      <p class="project-description">{{ description }}</p>
+      <div class="label">{{ label }}</div>
+    </div>
+    <div class="project-images">
+      <img src="{{ img }}" alt=" {{ alt }}" />
+    </div>
     <extends src="footer.html"></extends>
 
     <script src="js/main.js" type="module"></script>

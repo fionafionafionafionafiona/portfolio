@@ -103,7 +103,7 @@
   }
 }
 
-//Current page button color
+//Current page button
 .header-homepage .homepage,
 .header-about .about,
 .header-contact .contact {
@@ -111,7 +111,8 @@
 }
 
 .header-homepage,
-.header-contact {
+.header-contact,
+.header-project {
   .header-open-eye {
     display: none;
   }
