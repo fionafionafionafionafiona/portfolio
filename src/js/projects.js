@@ -2,19 +2,51 @@ import * as THREE from "three";
 import gsap from "gsap";
 
 var projects = [
-  { img: require("../img/bleue.png"), ratio: 0.98, url: "project.html" },
-  { img: require("../img/forest.jpg"), ratio: 0.6, url: "project.html" },
+  {
+    img: require("../img/bleue.png"),
+    ratio: 0.98,
+    url: "project-nude-ocean.html",
+  },
+  {
+    img: require("../img/forest.jpg"),
+    ratio: 0.6,
+    url: "project-nude-ocean.html",
+  },
   {
     img: require("../img/collage-exposition.png"),
     ratio: 1.16,
-    url: "project.html",
+    url: "project-nude-ocean.html",
   },
-  { img: require("../img/vitamin-well.png"), ratio: 0.6, url: "project.html" },
-  { img: require("../img/vin-nature.png"), ratio: 1, url: "project.html" },
-  { img: require("../img/nude-ocean.jpg"), ratio: 0.66, url: "project.html" },
-  { img: require("../img/egypte.jpg"), ratio: 0.66, url: "project.html" },
-  { img: require("../img/all-times-1.jpeg"), ratio: 1.24, url: "project.html" },
-  { img: require("../img/obsucra-2.png"), ratio: 0.62, url: "project.html" },
+  {
+    img: require("../img/vitamin-well.png"),
+    ratio: 0.6,
+    url: "project-nude-ocean.html",
+  },
+  {
+    img: require("../img/vin-nature.png"),
+    ratio: 1,
+    url: "project-nude-ocean.html",
+  },
+  {
+    img: require("../img/nude-ocean.jpg"),
+    ratio: 0.66,
+    url: "project-nude-ocean.html",
+  },
+  {
+    img: require("../img/egypte.jpg"),
+    ratio: 0.66,
+    url: "project-nude-ocean.html",
+  },
+  {
+    img: require("../img/all-times-1.jpeg"),
+    ratio: 1.24,
+    url: "project-nude-ocean.html",
+  },
+  {
+    img: require("../img/obsucra-2.png"),
+    ratio: 0.62,
+    url: "project-nude-ocean.html",
+  },
 ];
 
 var container = document.querySelector(".l-scene-container");

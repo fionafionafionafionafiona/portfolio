@@ -1,0 +1,96 @@
+.project-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 29px;
+  color: var(--Black);
+  font-size: var(--text-font-size);
+  font-weight: 400;
+  padding-top: 220px;
+}
+
+.project-title-date {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-self: stretch;
+}
+
+.project-title {
+  letter-spacing: 4.42px;
+  text-transform: uppercase;
+}
+
+.project-date {
+  text-align: right;
+}
+
+.label {
+  color: var(--Mate);
+  text-align: right;
+  font-size: 12px;
+  font-weight: var(--text-font-weight);
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.project-images {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 48px;
+  img {
+    width: 100%;
+  }
+}
+.project-compress {
+  display: none;
+}
+.project-expand-compress {
+  width: 60px;
+  height: 60px;
+}
+
+//LIGHTBOX
+
+.project-zoom {
+  display: none;
+}
+
+.project-images.is-active {
+  gap: 0;
+}
+
+.project-zoom.is-active {
+  display: flex;
+  img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    inset: 0;
+  }
+}
+
+.project-light-box {
+  .header-nav a {
+    mix-blend-mode: plus-lighter;
+  }
+  .header-button {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(3.5px);
+  }
+  .header-languages {
+    display: none;
+  }
+  .project-compress {
+    display: flex;
+    position: absolute;
+    bottom: 100;
+    right: 100;
+  }
+}

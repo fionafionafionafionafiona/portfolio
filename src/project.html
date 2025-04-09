@@ -19,17 +19,48 @@
         locals='{"img":"img/closed-eye.svg", "alt":"non"}'
       ></extends>
     </div>
-    <div class="project-info">
-      <div class="project-title-date">
-        <div class="project-title">{{ title }}</div>
-        <div class="project-date">{{ year }}</div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-lg-5">
+          <div class="project-info">
+            <div class="project-title-date">
+              <div class="project-title">{{ title }}</div>
+              <div class="project-date">{{ year }}</div>
+            </div>
+            <p class="project-description">{{ description }}</p>
+            <div class="label">
+              {{ label }}
+              <img src="img/line-label.svg" alt="#" />
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-lg-5 offset-lg-1">
+          <div class="project-images">
+            <img src="{{ img }}" alt=" {{ alt }}" />
+
+            <!-- {{ img[0] }} {{ img[1] }} {{ img[2] }} -->
+          </div>
+        </div>
+        <div class="project-expand-compress">
+          <img
+            class="project-expand"
+            src="img/button-expand.svg"
+            alt="Expand picture"
+          />
+        </div>
       </div>
-      <p class="project-description">{{ description }}</p>
-      <div class="label">{{ label }}</div>
     </div>
-    <div class="project-images">
+
+    <div class="project-zoom">
       <img src="{{ img }}" alt=" {{ alt }}" />
+      <img
+        class="project-compress"
+        src="img/button-compress.svg"
+        alt="Compress picture"
+      />
     </div>
+
     <extends src="footer.html"></extends>
 
     <script src="js/main.js" type="module"></script>
