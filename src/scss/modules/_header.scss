@@ -2,12 +2,13 @@
   padding: 45px 0 0 27px;
 }
 .header-desktop {
+  position: fixed;
   display: flex;
   padding: 36px 55px 0px 40px;
+  width: 100%;
   justify-content: space-between;
   align-items: flex-start;
   z-index: 1;
-  position: relative;
 }
 
 .header-nav {

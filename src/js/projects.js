@@ -40,7 +40,7 @@ var projects = [
   {
     img: require("../img/all-times-1.jpeg"),
     ratio: 1.24,
-    url: "project-nude-ocean.html",
+    url: "project-all-times.html",
   },
   {
     img: require("../img/obsucra-2.png"),
@@ -141,7 +141,7 @@ container.addEventListener("click", (event) => {
   cubes.forEach((cube) => (cube.position.x = cube.userData.originalX)); // Reset all cubes
 
   if (intersects.length > 0) {
-    window.location.href = cube.url;
+    window.location.href = intersects[0].object.url;
   }
 });
 

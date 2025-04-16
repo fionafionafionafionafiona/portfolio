@@ -7,7 +7,9 @@
   color: var(--Black);
   font-size: var(--text-font-size);
   font-weight: 400;
-  padding-top: 220px;
+  margin-top: 270px;
+  position: sticky;
+  top: 270;
 }
 
 .project-title-date {
@@ -40,17 +42,22 @@
 .project-images {
   display: flex;
   flex-direction: column;
+  margin-top: 170px;
   justify-content: center;
   align-items: center;
   gap: 48px;
+
   img {
     width: 100%;
   }
 }
+
 .project-compress {
   display: none;
 }
 .project-expand-compress {
+  position: sticky;
+  top: 250;
   width: 60px;
   height: 60px;
 }
@@ -67,16 +74,17 @@
 
 .project-zoom.is-active {
   display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
   img {
     object-fit: cover;
     width: 100%;
-    height: 100%;
-    position: fixed;
-    inset: 0;
   }
 }
 
 .project-light-box {
+  position: fixed;
   .header-nav a {
     mix-blend-mode: plus-lighter;
   }
@@ -89,8 +97,5 @@
   }
   .project-compress {
     display: flex;
-    position: absolute;
-    bottom: 100;
-    right: 100;
   }
 }

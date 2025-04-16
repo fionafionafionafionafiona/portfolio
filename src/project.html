@@ -16,7 +16,7 @@
     <div class="header-project">
       <extends
         src="header.html"
-        locals='{"img":"img/closed-eye.svg", "alt":"non"}'
+        locals='{"img":"img/closed-eye.svg", "alt":"Image of a closed eye"}'
       ></extends>
     </div>
 
@@ -37,9 +37,7 @@
         </div>
         <div class="col-12 col-lg-5 offset-lg-1">
           <div class="project-images">
-            <img src="{{ img }}" alt=" {{ alt }}" />
-
-            <!-- {{ img[0] }} {{ img[1] }} {{ img[2] }} -->
+            <block name="images"></block>
           </div>
         </div>
         <div class="project-expand-compress">
@@ -53,12 +51,12 @@
     </div>
 
     <div class="project-zoom">
-      <img src="{{ img }}" alt=" {{ alt }}" />
       <img
         class="project-compress"
         src="img/button-compress.svg"
         alt="Compress picture"
       />
+      <block name="images"></block>
     </div>
 
     <extends src="footer.html"></extends>
