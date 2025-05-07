@@ -63,13 +63,11 @@ renderer.setPixelRatio(window.devicePixelRatio);
 renderer.setSize(width, height);
 container.appendChild(renderer.domElement);
 
-//Texture loader
 var textureLoader = new THREE.TextureLoader();
 var group = new THREE.Group();
 
-// Create and Load Textures for Cubes
 var cubes = [];
-// var numCubes = 10; // Adjust based on viewport size
+
 var spacing = 2.7; // Distance between cubes
 var numCubes = Math.ceil(window.innerHeight / spacing) + 5;
 var initialOffset = -(numCubes * spacing) / 2 + spacing;
@@ -93,8 +91,7 @@ for (var i = 0; i < numCubes; i++) {
 function degreesToRadians(degrees) {
   return degrees * (Math.PI / 180);
 }
-//Group
-// group.rotation.y = (Math.PI / 6) * -1;
+
 group.rotation.y = degreesToRadians(-21);
 group.rotation.x = degreesToRadians(20);
 group.position.x = -1.2;
@@ -116,6 +113,7 @@ cubes.forEach((cube) => {
 
 var raycaster = new THREE.Raycaster();
 var mouse = new THREE.Vector2();
+var lastHoveredCube = null;
 
 window.addEventListener("mousemove", (event) => {
   mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
@@ -124,10 +122,28 @@ window.addEventListener("mousemove", (event) => {
   raycaster.setFromCamera(mouse, camera);
   var intersects = raycaster.intersectObjects(cubes);
 
-  cubes.forEach((cube) => (cube.position.x = cube.userData.originalX)); // Reset all cubes
+  if (
+    lastHoveredCube &&
+    (!intersects.length || intersects[0].object !== lastHoveredCube)
+  ) {
+    gsap.to(lastHoveredCube.position, {
+      x: lastHoveredCube.userData.originalX,
+      duration: 0.3,
+      ease: "power2.out",
+    });
+    lastHoveredCube = null;
+  }
 
   if (intersects.length > 0) {
-    intersects[0].object.position.x += 2; // Move hovered cube
+    var hoveredCube = intersects[0].object;
+    if (hoveredCube !== lastHoveredCube) {
+      gsap.to(hoveredCube.position, {
+        x: hoveredCube.userData.originalX + 2,
+        duration: 0.3,
+        ease: "power2.out",
+      });
+      lastHoveredCube = hoveredCube;
+    }
   }
 });
 

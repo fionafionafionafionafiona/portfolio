@@ -55,6 +55,7 @@
 .project-compress {
   display: none;
 }
+
 .project-expand-compress {
   position: sticky;
   top: 250;
@@ -81,21 +82,23 @@
     object-fit: cover;
     width: 100%;
   }
+  .project-compress {
+    display: flex;
+    position: fixed;
+    bottom: 120;
+    right: 125;
+    width: 40px;
+    height: 35px;
+  }
 }
 
 .project-light-box {
   position: fixed;
-  .header-nav a {
-    mix-blend-mode: plus-lighter;
-  }
   .header-button {
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(3.5px);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(1.5px);
   }
   .header-languages {
     display: none;
-  }
-  .project-compress {
-    display: flex;
   }
 }
