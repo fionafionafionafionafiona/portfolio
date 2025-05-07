@@ -3,27 +3,27 @@ import gsap from "gsap";
 
 var projects = [
   {
-    img: require("../img/bleue.png"),
+    img: require("../img/bleue.webp"),
     ratio: 0.98,
     url: "project-nude-ocean.html",
   },
   {
-    img: require("../img/forest.jpg"),
+    img: require("../img/forest.webp"),
     ratio: 0.6,
     url: "project-nude-ocean.html",
   },
   {
-    img: require("../img/collage-exposition.png"),
+    img: require("../img/collage-exposition.jpg"),
     ratio: 1.16,
     url: "project-nude-ocean.html",
   },
   {
-    img: require("../img/vitamin-well.png"),
+    img: require("../img/vitamin-well.webp"),
     ratio: 0.6,
     url: "project-nude-ocean.html",
   },
   {
-    img: require("../img/vin-nature.png"),
+    img: require("../img/vin-nature.jpg"),
     ratio: 1,
     url: "project-nude-ocean.html",
   },
@@ -38,12 +38,12 @@ var projects = [
     url: "project-nude-ocean.html",
   },
   {
-    img: require("../img/all-times-1.jpeg"),
+    img: require("../img/all-times-1.jpg"),
     ratio: 1.24,
     url: "project-all-times.html",
   },
   {
-    img: require("../img/obsucra-2.png"),
+    img: require("../img/obsucra-2.jpg"),
     ratio: 0.62,
     url: "project-nude-ocean.html",
   },
